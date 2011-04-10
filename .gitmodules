@@ -1,0 +1,9 @@
+[submodule "vendor/pusher-php"]
+	path = vendor/pusher-php
+	url = https://github.com/igorw/Pusher-PHP.git
+[submodule "vendor/twig"]
+	path = vendor/twig
+	url = https://github.com/fabpot/Twig.git
+[submodule "vendor/buzz"]
+	path = vendor/buzz
+	url = https://github.com/kriswallsmith/Buzz.git
