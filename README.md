@@ -1,3 +1,3 @@
 # ClusterStream
 
-A stream of everything.
+A stream of the universe.
