@@ -1,0 +1,11 @@
+SetEnv PUSHER_APP_ID 1234
+SetEnv PUSHER_KEY foo
+SetEnv PUSHER_SECRET bar
+
+<IfModule mod_rewrite.c>
+        RewriteEngine On
+        #RewriteBase /path/to/app
+        RewriteCond %{REQUEST_FILENAME} !-f
+        RewriteCond %{REQUEST_FILENAME} !-d
+        RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

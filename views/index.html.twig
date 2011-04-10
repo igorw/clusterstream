@@ -1,0 +1,41 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+  <form method="post" action="{{ app.request.basePath }}/create" id="message-form">
+    <input type="text" name="message" placeholder="your message from the universe">
+    <input type="submit" value="BOOM!">
+  </form>
+
+  <div id="messages">
+  </div>
+  
+  <div id="no-messages">
+  <p>
+    Waiting for the universe to awake...
+  </p>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+  {{ parent() }}
+  <script>
+    $(function() {
+      $('#message-form').submit(function() {
+        var action = $(this).attr('action'),
+            message = $(this).find('input[name=message]').val();
+        $.post(action, { message: message });
+        $(this).find('input[name=message]').val('');
+        return false;
+      });
+    });
+    
+    var pusher = new Pusher("{{ app['pusher.key']|e('js') }}");
+    var channel = pusher.subscribe('stream');
+    channel.bind('message', function(message) {
+      $('#no-messages').slideUp();
+      var messageTag = $('<p>').text(message).hide();
+      $('#messages').prepend(messageTag);
+      messageTag.slideDown();
+    });
+  </script>
+{% endblock %}
