@@ -1,24 +1,20 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-  <title>ClusterStream</title>
-</head>
-<body>
+{% extends "layout.html.twig" %}
 
-<h1>Whoops!</h1>
+{% block content %}
+  <p>
+    {% if message %}
+      {{ message }}
+    {% else %}
+      We are extremely sorry but something went terribly wrong.
+    {% endif %}
+  </p>
 
-<p>
-  {% if message %}
-    {{ message }}
-  {% else %}
-    We are extremely sorry but something went terribly wrong.
+  {% if exception %}
+  <p>
+    {{ exception.message }}
+  </p>
   {% endif %}
-</p>
+{% endblock %}
 
-<p>
-  {{ exception.message }}
-</p>
-
-</body>
-</html>
+{% block javascript %}
+{% endblock %}
