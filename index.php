@@ -13,6 +13,11 @@ $app->register(new Silex\Extension\TwigExtension(), array(
     'twig.class_path' => __DIR__.'/vendor/twig/lib',
 ));
 
+$app->register(new Silex\Extension\MonologExtension(), array(
+    'monolog.logfile'       => __DIR__.'/development.log',
+    'monolog.class_path'    => __DIR__.'/vendor/monolog/src',
+));
+
 $app['autoloader']->registerNamespaces(array(
     'Pusher'    => __DIR__.'/vendor/pusher-php/lib',
     'Buzz'      => __DIR__.'/vendor/buzz/lib',

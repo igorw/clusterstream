@@ -7,3 +7,6 @@
 [submodule "vendor/buzz"]
 	path = vendor/buzz
 	url = https://github.com/kriswallsmith/Buzz.git
+[submodule "vendor/monolog"]
+	path = vendor/monolog
+	url = https://github.com/Seldaek/monolog.git
