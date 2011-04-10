@@ -1,0 +1,110 @@
+html {
+    background: rgb(94,1,99) no-repeat fixed;
+    background-color: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.27, rgb(94,1,99)),
+      color-stop(0.74, rgb(148,3,131))
+    );
+    background-color: -moz-linear-gradient(
+        center bottom,
+        rgb(92,1,99) 27%,
+        rgb(148,3,131) 74%
+    );
+}
+body {
+    background: #222;
+    color: white;
+    width: 600px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-family: 'VT323', verdana, sans-serif;
+}
+input[type=submit] {
+    background-color: #3ACC00 !important;
+    padding: 8px 15px !important;
+    margin: 2px 15px 0px 0px !important;
+    display: block;
+    float: left;
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+}
+@-moz-document url-prefix() {
+    input[type=submit] {
+        margin-top: 0px !important;
+    }
+}
+input[type=text] {
+    margin-left: 45px;
+    padding: 5px;
+    width: 400px;
+    font-size: 1em;
+    font-family: 'VT323';
+    border: 3px grey solid;
+    outline: 0;
+    display: block;
+    float: left;
+}
+input[type=text]:hover, input[type=text]:focus {
+    border-color: #49DB0F;
+}
+input[type=text]::-webkit-input-placeholder {
+    color: #666;
+}
+h1, h2, h3 {
+    font-family: 'Orbitron';
+}
+
+/* star background */
+@-webkit-keyframes STAR-MOVE {
+        from {
+                background-position: 5% 5%
+        }
+        to {
+                background-position: 1300% 600%
+        }
+}
+#midground {
+        background: url(images/midground.png) repeat 20% 20%;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -200;
+
+        -webkit-animation-name: STAR-MOVE;
+        -webkit-animation-duration: 150s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+}
+#foreground {
+        background: url(images/foreground.png) repeat 35% 35%;
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        z-index: -100;
+
+        -webkit-animation-name: STAR-MOVE;
+        -webkit-animation-duration: 100s;
+        -webkit-animation-timing-function: linear;
+        -webkit-animation-iteration-count: infinite;
+}
+
+/* clearfix */
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+.clearfix {
+    display: inline-block;
+}
+html[xmlns] .clearfix {
+    display: block;
+}
+* html .clearfix {
+    height: 1%;
+}
