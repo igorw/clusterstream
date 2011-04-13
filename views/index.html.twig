@@ -8,7 +8,7 @@
 
   <div id="messages">
   </div>
-  
+
   <div id="no-messages">
   <p>
     Waiting for the universe to awake...
@@ -28,8 +28,8 @@
         return false;
       });
     });
-    
-    var pusher = new Pusher("{{ app['pusher.key']|e('js') }}");
+
+    var pusher = new Pusher("{{ app['pusher.key']|e('js') }}", { encrypted: true });
     var channel = pusher.subscribe('stream');
     channel.bind('message', function(message) {
       $('#no-messages').slideUp();
