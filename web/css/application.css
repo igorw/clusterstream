@@ -68,7 +68,7 @@ h1, h2, h3 {
         }
 }
 #midground {
-        background: url(images/midground.png) repeat 20% 20%;
+        background: url(../images/midground.png) repeat 20% 20%;
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
         z-index: -200;
@@ -79,7 +79,7 @@ h1, h2, h3 {
         -webkit-animation-iteration-count: infinite;
 }
 #foreground {
-        background: url(images/foreground.png) repeat 35% 35%;
+        background: url(../images/foreground.png) repeat 35% 35%;
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
         z-index: -100;
