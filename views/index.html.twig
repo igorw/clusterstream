@@ -20,12 +20,14 @@
   {{ parent() }}
   <script>
     $(function() {
-      $('#message-form').submit(function() {
-        var action = $(this).attr('action'),
+      $('#message-form').submit(function(e) {
+		var action = $(this).attr('action'),
             message = $(this).find('input[name=message]').val();
+
+        e.preventDefault();
+
         $.post(action, { message: message });
         $(this).find('input[name=message]').val('');
-        return false;
       });
     });
 
