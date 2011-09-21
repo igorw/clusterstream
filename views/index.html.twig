@@ -1,7 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-  <form method="post" action="{{ app.request.basePath }}/create" id="message-form" class="clearfix">
+  <form method="post" action="{{ app.request.baseUrl }}/create" id="message-form" class="clearfix">
     <input type="text" name="message" placeholder="your message to the universe">
     <input type="submit" value="BOOM!" class="awesome medium button">
   </form>
